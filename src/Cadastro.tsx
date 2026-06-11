@@ -94,7 +94,7 @@ export default function Cadastro() {
       </div>
 
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <img
           src="https://i.postimg.cc/JnzPbBMq/aprobson-1.jpg"
           alt="Hero Background"
