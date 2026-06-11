@@ -1,0 +1,6 @@
+{
+  "name": "Avivah Global Imersão",
+  "description": "Página de cadastro e acesso para a imersão Avivah Global.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
