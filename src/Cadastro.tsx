@@ -34,19 +34,32 @@ export default function Cadastro() {
     setIsSubmitting(true);
 
     try {
-      await fetch("https://storage-unless-sublease.ngrok-free.dev/webhook-test/dfbc64e8-4424-4d14-ae0f-8f600b990beb", {
+      const response = await fetch("/api/cadastro", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "ngrok-skip-browser-warning": "true",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          nome: formData.nome,
+          whatsapp: formData.whatsapp,
+          email: formData.email,
+        }),
       });
       
-      navigate("/obrigado");
+      let data;
+      try {
+        data = await response.json();
+      } catch (e) {
+        data = { success: false, message: "Erro inesperado no servidor." };
+      }
+
+      if (response.ok && data.success) {
+        navigate("/obrigado");
+      } else {
+        alert(data.message || "Ocorreu um erro ao realizar o cadastro. Tente novamente.");
+      }
     } catch (err) {
-      // Navigate even if the webhook fetch fails (e.g., ad blocker, tracking protection)
-      navigate("/obrigado");
+      alert("Erro de conexão. Tente novamente.");
     } finally {
       setIsSubmitting(false);
     }
