@@ -13,7 +13,7 @@ export default async function handler(req, res) {
       });
     }
 
-    const webhookUrl = process.env.N8N_WEBHOOK_URL;
+    const webhookUrl = "https://storage-unless-sublease.ngrok-free.dev/webhook/dfbc64e8-4424-4d14-ae0f-8f600b990beb";
     if (!webhookUrl) {
       console.error('N8N_WEBHOOK_URL não configurada');
       return res.status(500).json({
@@ -25,7 +25,8 @@ export default async function handler(req, res) {
     const response = await fetch(webhookUrl, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'ngrok-skip-browser-warning': 'true'
       },
       body: JSON.stringify({ nome, whatsapp, email })
     });
