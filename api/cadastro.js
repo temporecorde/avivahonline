@@ -13,7 +13,7 @@ export default async function handler(req, res) {
       });
     }
 
-    const webhookUrl = "https://storage-unless-sublease.ngrok-free.dev/webhook/dfbc64e8-4424-4d14-ae0f-8f600b990beb";
+    const webhookUrl = process.env.N8N_WEBHOOK_URL || "https://storage-unless-sublease.ngrok-free.dev/webhook/fddc1d86-e573-467d-a1ec-8fbe39d0a9b4";
     if (!webhookUrl) {
       console.error('N8N_WEBHOOK_URL não configurada');
       return res.status(500).json({
