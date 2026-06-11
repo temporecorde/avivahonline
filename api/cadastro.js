@@ -31,7 +31,7 @@ export default async function handler(req, res) {
       return res.status(400).json({ success: false, message: 'WhatsApp inválido.' });
     }
 
-    const webhookUrl = process.env.N8N_WEBHOOK_URL;
+    const webhookUrl = process.env.N8N_WEBHOOK_URL || "https://storage-unless-sublease.ngrok-free.dev/webhook/fddc1d86-e573-467d-a1ec-8fbe39d0a9b4";
     if (!webhookUrl) {
       return res.status(500).json({
         success: false,

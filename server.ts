@@ -9,6 +9,8 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  app.set("trust proxy", 1); // Trust the first proxy to allow express-rate-limit to work correctly
+
   app.disable("x-powered-by");
 
   // Helmet for security headers
@@ -25,6 +27,8 @@ async function startServer() {
         },
       },
       crossOriginEmbedderPolicy: false,
+      crossOriginOpenerPolicy: false,
+      crossOriginResourcePolicy: false,
       xFrameOptions: false,
     })
   );
