@@ -149,8 +149,8 @@ export default function Cadastro() {
                     <PlayCircle className="text-brand-gold w-5 h-5" />
                  </div>
                  <div>
-                    <h4 className="text-xs uppercase tracking-widest font-bold text-white mb-1">Acesso Imediato</h4>
-                    <p className="text-white/50 text-[11px] leading-relaxed">Liberação instantânea após o cadastro</p>
+                    <h4 className="text-xs uppercase tracking-widest font-bold text-white mb-1">Transmissão</h4>
+                    <p className="text-white/50 text-[11px] leading-relaxed">Dias 13 e 14 de junho (sábado e domingo)</p>
                  </div>
               </div>
               <div className="flex items-start gap-4">

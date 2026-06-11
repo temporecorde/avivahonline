@@ -57,11 +57,16 @@ export default function ObrigadoAvivah() {
 
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-tighter leading-[0.95] mb-6">
-            Acesso <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-[#fff1d6] to-brand-gold-dark">Liberado!</span>
+            Cadastro <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-[#fff1d6] to-brand-gold-dark">Confirmado!</span>
           </h1>
-          <p className="text-lg md:text-2xl text-white/70 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
-            Seu cadastro foi confirmado com sucesso. Falta apenas <strong className="text-white font-medium">um passo</strong> para concluir a sua inscrição.
-          </p>
+          <div className="space-y-4">
+            <p className="text-lg md:text-2xl text-white/70 max-w-3xl mx-auto font-light tracking-wide leading-relaxed">
+              A transmissão acontecerá nos dias <strong className="text-brand-gold font-medium">13 e 14 de junho (sábado e domingo)</strong>.
+            </p>
+            <p className="text-base md:text-xl text-white/90 max-w-2xl mx-auto font-light tracking-wide leading-relaxed">
+              Falta apenas <strong className="text-white font-bold">um passo</strong> para concluir a sua inscrição.
+            </p>
+          </div>
         </div>
 
         <div className="w-full max-w-2xl flex flex-col gap-6">
