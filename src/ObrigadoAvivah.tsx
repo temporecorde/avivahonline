@@ -16,7 +16,7 @@ export default function ObrigadoAvivah() {
     <div className="min-h-screen bg-[#040404] text-white selection:bg-brand-gold selection:text-black font-sans flex flex-col justify-center overflow-x-hidden pt-12 pb-20 relative">
       
       {/* Background Image & Effects */}
-      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 z-0 overflow-hidden pointer-events-none">
         <img
           src="https://i.postimg.cc/JnzPbBMq/aprobson-1.jpg"
           alt="Avivah Background"
@@ -79,6 +79,8 @@ export default function ObrigadoAvivah() {
             <img 
               src="https://i.postimg.cc/BQtBvXTN/Chat-GPT-Image-10-de-jun-de-2026-23-11-59.png" 
               alt="Deseja Semear?" 
+              loading="lazy"
+              decoding="async"
               className="w-full h-auto object-cover block"
             />
           </motion.button>
