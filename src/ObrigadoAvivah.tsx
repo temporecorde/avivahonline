@@ -66,31 +66,11 @@ export default function ObrigadoAvivah() {
 
         <div className="w-full max-w-2xl flex flex-col gap-6">
 
-          {/* SEMENTE CTA - Image Button */}
-          <motion.button 
-            type="button"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            onClick={() => setIsPopupOpen(true)}
-            className="w-full relative rounded-3xl md:rounded-[2rem] overflow-hidden group hover:scale-[1.02] active:scale-[0.98] transition-all outline-none shadow-2xl block border border-white/10"
-          >
-            <div className="absolute inset-0 bg-brand-gold/0 group-hover:bg-brand-gold/10 transition-colors z-10" />
-            <img 
-              src="https://i.postimg.cc/BQtBvXTN/Chat-GPT-Image-10-de-jun-de-2026-23-11-59.png" 
-              alt="Deseja Semear?" 
-              loading="lazy"
-              decoding="async"
-              className="w-full h-auto object-cover block"
-            />
-          </motion.button>
-
-
           {/* MAIN CTA - Highly Visible */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="bg-gradient-to-b from-[#111] to-[#0A0A0A] border border-white/10 shadow-2xl rounded-3xl p-8 md:p-10 w-full relative overflow-hidden"
           >
             {/* Highlight line at top */}
@@ -122,6 +102,25 @@ export default function ObrigadoAvivah() {
             </div>
           </motion.div>
 
+          {/* SEMENTE CTA - Image Button */}
+          <motion.button 
+            type="button"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            onClick={() => setIsPopupOpen(true)}
+            className="w-full relative rounded-3xl md:rounded-[2rem] overflow-hidden group hover:scale-[1.02] active:scale-[0.98] transition-all outline-none shadow-2xl block border border-white/10"
+          >
+            <div className="absolute inset-0 bg-brand-gold/0 group-hover:bg-brand-gold/10 transition-colors z-10" />
+            <img 
+              src="https://i.postimg.cc/BQtBvXTN/Chat-GPT-Image-10-de-jun-de-2026-23-11-59.png" 
+              alt="Deseja Semear?" 
+              loading="lazy"
+              decoding="async"
+              className="w-full h-auto object-cover block"
+            />
+          </motion.button>
+
         </div>
       </motion.div>
 
@@ -132,31 +131,34 @@ export default function ObrigadoAvivah() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+              className="absolute inset-0 bg-black/60 backdrop-blur-md"
               onClick={() => setIsPopupOpen(false)}
             />
             
             <motion.div
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="bg-gradient-to-b from-[#111] to-[#0A0A0A] border border-white/10 shadow-2xl rounded-3xl p-8 w-full max-w-md relative z-10 overflow-hidden"
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="bg-white shadow-[0_30px_60px_rgba(0,0,0,0.4)] rounded-3xl p-8 w-full max-w-md relative z-10 overflow-hidden"
             >
+              {/* Subtle top gradient line to keep branding */}
+              <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-60" />
+
               <button 
                 onClick={() => setIsPopupOpen(false)}
-                className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors p-2"
+                className="absolute top-4 right-4 text-black/30 hover:text-black/70 hover:bg-gray-100 rounded-full transition-all p-2"
               >
                 <X className="w-5 h-5" />
               </button>
 
               <div className="flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-brand-gold/10 border border-brand-gold/20 flex items-center justify-center mb-4">
-                  <Heart className="w-8 h-8 text-brand-gold" />
+                <div className="w-16 h-16 rounded-2xl bg-brand-gold/10 flex items-center justify-center mb-5 rotate-3 shadow-[0_10px_20px_rgba(212,175,55,0.1)]">
+                  <Heart className="w-8 h-8 text-brand-gold-dark -rotate-3" fill="currentColor" />
                 </div>
-                <h3 className="text-xl font-black uppercase tracking-tight text-white mb-2">
+                <h3 className="text-2xl font-black uppercase tracking-tight text-[#111] mb-2">
                   Deseja Semear?
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed font-light mb-6">
+                <p className="text-[#555] text-sm md:text-base leading-relaxed font-light mb-8 max-w-[90%]">
                   Se você sente no coração o desejo de honrar e ofertar neste ministério, utilize a chave PIX ou o link da Wise abaixo.
                 </p>
 
@@ -164,31 +166,37 @@ export default function ObrigadoAvivah() {
                   <div className="flex flex-row items-stretch gap-2 w-full">
                     <div 
                       onClick={handleCopyPix}
-                      className="bg-black/60 border border-white/10 hover:border-brand-gold/30 rounded-xl px-4 py-4 flex-1 flex items-center font-mono text-[13px] sm:text-sm cursor-pointer transition-colors overflow-hidden"
+                      className="bg-gray-50 border border-gray-200 hover:border-brand-gold/50 rounded-xl px-4 py-4 flex-1 flex items-center justify-center font-mono text-[13px] sm:text-sm cursor-pointer transition-all shadow-sm group"
                       title="Clique para copiar"
                     >
-                      <span className="text-white/80 truncate">oferta@mgraglobal.com</span>
+                      <span className="text-[#333] truncate font-medium group-hover:text-black transition-colors">oferta@mgraglobal.com</span>
                     </div>
                     <button 
                       onClick={handleCopyPix}
-                      className="flex items-center justify-center gap-2 px-4 sm:px-6 py-4 bg-brand-gold/10 hover:bg-brand-gold/20 text-brand-gold font-bold uppercase tracking-widest text-[10px] sm:text-xs rounded-xl transition-colors shrink-0 border border-brand-gold/20"
+                      className="flex items-center justify-center gap-2 px-4 sm:px-6 py-4 bg-[#111] hover:bg-[#222] text-white font-bold uppercase tracking-widest text-[10px] sm:text-xs rounded-xl transition-all shrink-0 shadow-lg"
                     >
                       {copied ? (
-                        <><Check className="w-4 h-4" /> <span className="hidden sm:inline">Copiado</span></>
+                        <><Check className="w-4 h-4 text-[#25D366]" /> <span className="hidden sm:inline">Copiado</span></>
                       ) : (
-                        <><Copy className="w-4 h-4" /> <span className="hidden sm:inline">Copiar PIX</span></>
+                        <><Copy className="w-4 h-4" /> <span className="hidden sm:inline">Copiar</span></>
                       )}
                     </button>
                   </div>
                   
+                  <div className="relative flex items-center py-2">
+                     <div className="flex-grow border-t border-gray-200"></div>
+                     <span className="flex-shrink-0 mx-4 text-gray-400 text-xs font-medium tracking-widest uppercase">Ou</span>
+                     <div className="flex-grow border-t border-gray-200"></div>
+                  </div>
+
                   <a
                     href="https://wise.com/pay/business/robsonpmartins"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center gap-2 px-6 py-4 bg-[#9fe870] hover:bg-[#8ee15d] text-[#163300] font-bold uppercase tracking-widest text-xs rounded-xl transition-colors w-full"
+                    className="flex items-center justify-center gap-2 px-6 py-4 bg-[#9fe870] hover:bg-[#8ee15d] text-[#163300] font-bold uppercase tracking-widest text-[11px] sm:text-xs rounded-xl transition-transform hover:scale-[1.02] active:scale-95 shadow-md w-full group"
                   >
-                    OFERTA INTERNACIONAL
-                    <ArrowRight className="w-4 h-4" />
+                    OFERTA INTERNACIONAL (WISE)
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </a>
                 </div>
               </div>
